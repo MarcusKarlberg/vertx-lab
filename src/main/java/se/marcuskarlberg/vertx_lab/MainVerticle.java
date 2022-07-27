@@ -22,17 +22,12 @@ public class MainVerticle extends AbstractVerticle {
 
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
-    vertx.createHttpServer().requestHandler(req -> {
-      req.response()
-        .putHeader("content-type", "text/plain")
-        .end("Hello from Vert.x!");
-    }).listen(8888, http -> {
-      if (http.succeeded()) {
+
+    vertx.deployVerticle(new WebVerticle())
+      .onFailure(e -> LOG.error("Failed to deploy {}: ", WebVerticle.class.getSimpleName(), e))
+      .onSuccess(id -> {
+        LOG.info("Deployed {} with id {}", WebVerticle.class.getSimpleName(), id);
         startPromise.complete();
-        LOG.info("HTTP Server started on port {}", 8888);
-      } else {
-        startPromise.fail(http.cause());
-      }
-    });
+      });
   }
 }

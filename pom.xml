@@ -21,6 +21,7 @@
 
     <main.verticle>se.marcuskarlberg.vertx_lab.MainVerticle</main.verticle>
     <launcher.class>io.vertx.core.Launcher</launcher.class>
+    <jackson-databind.version>2.13.3</jackson-databind.version>
   </properties>
 
   <dependencyManagement>
@@ -80,6 +81,11 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-config</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-databind.version}</version>
     </dependency>
   </dependencies>
 
