@@ -1,0 +1,19 @@
+## GET all companies
+GET http://localhost:8888/companies
+Content-Type: application/json
+
+#######
+
+## POST a company
+PUT http://localhost:8888/companies
+Content-Type: application/json
+
+{
+  "company": "Test"
+}
+
+#######
+
+
+##Delete company by name
+DELETE http://localhost:8888/companies/Test
