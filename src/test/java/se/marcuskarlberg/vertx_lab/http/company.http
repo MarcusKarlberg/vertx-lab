@@ -9,7 +9,7 @@ PUT http://localhost:8888/companies
 Content-Type: application/json
 
 {
-  "company": "Test"
+  "company": "Tesla"
 }
 
 #######

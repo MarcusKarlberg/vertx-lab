@@ -40,8 +40,8 @@ public class FlywayMigration {
 
     final Flyway flyway = Flyway.configure()
       .dataSource(jdbcUrl, dbConfig.getUser(), dbConfig.getPassword())
-      .schemas("vertx-lab-schema")
-      .defaultSchema("vertx-lab-schema")
+      .schemas("lab")
+      .defaultSchema("lab")
       .load();
 
     var current = Optional.ofNullable(flyway.info().current());

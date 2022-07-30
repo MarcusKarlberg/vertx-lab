@@ -16,5 +16,4 @@ public class Company {
   public JsonObject toJsonObject() {
     return JsonObject.mapFrom(this);
   }
-
 }
